@@ -8,7 +8,7 @@ public class BombScript : MonoBehaviour
     public float timeToExplosion = 4.0f;
     private float timer = 0.0f;
     private GameManager gm = null;
-    
+    public GameObject prefabExplosion;
     void Start()
     {
         GameObject o = GameObject.FindGameObjectWithTag("GameManager");
@@ -36,7 +36,9 @@ public class BombScript : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > timeToExplosion)
         {
+            timer = 0.0f;
             gm.TakeDamage();
+            GameObject.Instantiate(prefabExplosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
