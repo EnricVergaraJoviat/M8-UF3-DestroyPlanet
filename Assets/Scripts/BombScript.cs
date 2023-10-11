@@ -9,14 +9,23 @@ public class BombScript : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager");
+        
+        if (gm != null)
+        {
+            Debug.LogError("No hi ha cap gameObject amb tag GameManahger");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Si han passat 4 segons --> Destroy & damage:
-        gm.GetComponent<Game>()
+        //Si han passat 4 segons --> Destroy this gameObject & damage using GameManeger:
+        
+            
     }
+    
+    //Si l'usuari fa click sobre la bomba=>
+    // Destroy
     
     
 }
