@@ -25,6 +25,8 @@ public class BombScript : MonoBehaviour
                 Debug.LogError("The GameObject with GameManager tag doesn't have the GameManager script attached to it");
             }
         }
+        
+        GetComponent<MeshRenderer>().material.color = Color.green;
     }
 
     // Update is called once per frame
@@ -37,6 +39,10 @@ public class BombScript : MonoBehaviour
             gm.TakeDamage();
             Destroy(gameObject);
         }
+
+        Color newColor = Color.Lerp(Color.green, Color.red, timer / timeToExplosion);
+        GetComponent<MeshRenderer>().material.color = newColor;
+        
 
     }
     
