@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public float angle;
+    private int lives = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,12 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 1, 0), angle*Time.deltaTime);
+        
+    }
 
+    public void TakeDamage()
+    {
+        lives--;
+        Debug.Log("Lives: "+lives);
     }
 }
