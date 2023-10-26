@@ -32,6 +32,7 @@ public class BombScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //Si han passat 4 segons --> Destroy this gameObject & damage using GameManeger:
         timer += Time.deltaTime;
         if (timer > timeToExplosion)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public GameObject bombParent;
     public float respawnTime = 3.0f;
     private float timer = 0.0f;
     public GameObject prefabBomb;
@@ -28,6 +29,6 @@ public class SpawnManager : MonoBehaviour
     private void CreateNewBomb()
     {
         Vector3 randPosition = Random.onUnitSphere * 0.5f;
-        GameObject.Instantiate(prefabBomb, randPosition, Quaternion.identity);
+        GameObject.Instantiate(prefabBomb, randPosition, Quaternion.identity,bombParent.transform);
     }
 }
